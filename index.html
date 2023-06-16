@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock</title>
+
+
+  <Style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    body{
+      background: linear-gradient(to bottom left, #020271 20%, #00ccff 100%);
+
+    }
+
+    .maincontainer {
+      border: 1px black solid;
+      height: 695px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-style: none;
+      
+    }
+
+    .boxes {
+      border: 1px black solid;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 45px;
+      gap: 15px;
+      border-radius: 35px;
+      border-style: none;
+      background: linear-gradient(to bottom right, #020271 0%, #20c0fa 100%);
+    }
+
+    .hourbox {
+      border: 1px black solid;
+      height: 80px;
+      width: 85px;
+      align-items: center;
+      padding: 20px;
+      /* box-shadow: 2px 2px 2px 2px; */
+      border-radius: 10px;
+      /* background-color: beige; */
+      border-style: none;
+
+    }
+
+    .mintsbox {
+      border: 1px black solid;
+      height: 80px;
+      width: 85px;
+      padding: 20px;
+      /* box-shadow: 2px 2px 2px 2px; */
+      border-radius: 10px;
+      /* background-color: beige; */
+      border-style: none;
+
+    }
+
+    .secbox {
+      border: 1px black solid;
+      height: 80px;
+      width: 85px;
+      padding: 20px;
+      /* box-shadow: 2px 2px 2px 2px; */
+      border-radius: 10px;
+      /* background-color: beige; */
+      border-style: none;
+
+    }
+
+    .amorpmbox {
+      border: 1px black solid;
+      height: 80px;
+      width: 85px;
+      align-items: center;
+      padding: 20px;
+      /* box-shadow: 2px 2px 2px 2px; */
+      border-radius: 10px;
+      /* background-color: beige; */
+      border-style: none;
+    }
+
+    .hrs {
+      border: 1px black solid;
+      width: 22px;
+      padding: 10px;
+      margin-top: 10px;
+      margin-left: 20px;
+      border-style: none;
+      font-size: 32px;
+      color: aliceblue;
+    }
+     
+    .mints{
+      border: 1px black solid;
+      width: 22px;
+      padding: 10px;
+      margin-top: 10px;
+      margin-left: 20px;
+      border-style: none;
+      font-size: 32px;
+      color: aliceblue;
+      
+    }
+     
+    .sec {
+      border: 1px black solid;
+      width: 22px;
+      padding: 10px;
+      margin-top: 10px;
+      margin-left: 20px;
+      border-style: none;
+      font-size: 32px;
+      color: aliceblue;
+      
+    }
+    .hrs2 {
+      border: 1px black solid;
+      width: 22px;
+      padding: 10px;
+      margin-top: 10px;
+      margin-left: 20px;
+      border-style: none;
+      font-size: 28px;
+      color: rgb(0, 0, 0);
+    }
+    .boxes h2{
+      font-size: 200;
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+      color: rgb(241, 236, 236);
+      font-size: 50px;
+    }
+
+  </Style>
+
+
+
+</head>
+
+<body>
+
+  <h1> Digital Clock</h1>
+
+
+  <div class="maincontainer">
+    <div class="boxes">
+      <div class="hourbox">
+        <div class="hrs">
+          <h3 id="hours">8</h3>
+        </div>
+        <h2>Hours</h2>
+      </div>
+
+      <div class="mintsbox">
+        <div class="mints">
+          <h3 id="minut">8</h3>
+        </div>
+        <h2>Minutes</h2>
+      </div>
+
+      <div class="secbox">
+        <div class="sec">
+          <h3 id="second">8</h3>
+        </div>
+        <h2>Seconds</h2>
+      </div>
+
+      <div class="amorpmbox">
+        <div class="hrs2">
+          <h2 id="am-pm">PM</h2>
+        </div>
+        
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+<script>
+
+
+function hr(){
+  let d1 = new Date();
+  let hrs = d1.getHours();
+  if(hrs >= 12){
+    document.getElementById("am-pm").innerHTML = "PM";
+  }
+  else{
+    document.getElementById("am-pm").innerHTML = "AM";
+  }
+  document.getElementById("hours").innerHTML = hrs;
+  setTimeout(hr, 1000);
+}
+ hr();
+
+function min(){
+  let d2 = new Date();
+  let mints = d2.getMinutes();
+  document.getElementById("minut").innerHTML = mints;
+  setTimeout(min, 1000);
+}
+ min();
+    
+function secnd(){
+  let d3 = new Date();
+  let sec = d3.getSeconds();
+  document.getElementById("second").innerHTML = sec;
+  setTimeout(secnd, 1000);
+}
+ secnd();
+    
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
